@@ -54,54 +54,55 @@ You can install these dependencies using `pip`.
 After running the script, the generated Hasse diagrams will be saved in the `images` folder. Below are some examples of the outputs along with the corresponding code snippets that generated them:
 
 1. **Divisibility Relation**:
-   ![Divisibility Relation](images/divisibility_relation.png)
-
     ```python
     elements = [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24, 30, 36, 40, 48, 60, 72]
     hasse_div = Hasse(elements, Hasse.divisibility_relation)
     hasse_div.draw()
     ```
 
-2. **Divisibility Relation with Arrows**:
-   ![Divisibility Relation with Arrows](images/divisibility_relation_arrows.png)
+   ![Divisibility Relation](images/divisibility_relation.png)
 
+2. **Divisibility Relation with Arrows**:
     ```python
     elements = [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15, 16, 18, 20, 24, 30, 36, 40, 48, 60, 72]
     hasse_div = Hasse(elements, Hasse.divisibility_relation, show_arrows=True)
     hasse_div.draw()
     ```
 
-3. **Subset Relation**:
-   ![Subset Relation](images/subset_relation.png)
+   ![Divisibility Relation with Arrows](images/divisibility_relation_with_arrows.png)
 
+3. **Subset Relation**:
     ```python
     elements = [{1}, {1, 2}, {1, 2, 3}, {2}, {2, 3}]
     hasse_sub = Hasse(elements, Hasse.subset_relation)
     hasse_sub.draw()
     ```
 
-4. **Less Than or Equal Relation**:
-   ![Less Than or Equal Relation](images/less_equal_relation.png)
+   ![Subset Relation](images/subset_relation.png)
 
+4. **Less Than or Equal Relation**:
     ```python
     elements = [12, 9, 62, 96, 18]
     hasse_leq = Hasse(elements, Hasse.less_equal_relation)
     hasse_leq.draw()
     ```
 
-5. **Greater Than or Equal Relation**:
-   ![Greater Than or Equal Relation](images/greater_equal_relation.png)
+   ![Less Than or Equal Relation](images/less_equal_relation.png)
 
+5. **Greater Than or Equal Relation**:
     ```python
     elements = [9, 13, 20, 27, 88]
     hasse_geq = Hasse(elements, Hasse.greater_equal_relation)
     hasse_geq.draw()
     ```
 
+   ![Greater Than or Equal Relation](images/greater_equal_relation.png)
+
 6. **GCD Prime Relation**:
-   ![GCD Prime Relation](images/gcd_prime_relation.png)
     ```python
     elements = [2, 3, 4, 5, 6, 9, 10, 12, 15]
     hasse_gcd_prime = Hasse(elements, gcd_prime_relation, show_arrows=True)
     hasse_gcd_prime.draw()
     ```
+    
+   ![GCD Prime Relation](images/gcd_prime_relation.png)
