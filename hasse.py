@@ -4,11 +4,12 @@ import matplotlib.pyplot as plt
 
 class Hasse:
     
-    def __init__(self, elements: List[Any], relation: Callable[[Any, Any], bool]):
-        # Convert sets to frozensets if necessary for compatibility with NetworkX
+    def __init__(self, elements: List[Any], relation: Callable[[Any, Any], bool], show_arrows: bool = False):
         self.elements = [frozenset(e) if isinstance(e, set) else e for e in elements]
         self.relation = relation
         self.graph = nx.DiGraph()
+        self.show_arrows = show_arrows
+
 
     @staticmethod
     def divisibility_relation(x: int, y: int) -> bool:
@@ -65,16 +66,23 @@ class Hasse:
 
         for level, nodes in level_nodes.items():
             for i, node in enumerate(nodes):
-                pos[node] = (i - len(nodes) / 2, -level)
+                pos[node] = (i - len(nodes) / 2, level)
 
-        # Convert frozensets to readable strings for labels
         labels = {node: self.format_node_label(node) for node in self.graph.nodes}
 
         plt.figure(figsize=(10, 6))
-        nx.draw(self.graph, pos, labels=labels, with_labels=True, node_color='skyblue',
-                node_size=2500, font_size=12, font_weight='bold', arrows=True)
+        nx.draw(self.graph, pos,
+                labels=labels,
+                with_labels=True,
+                node_color='skyblue',
+                node_size=2500,
+                font_size=12,
+                font_weight='bold',
+                arrows=self.show_arrows)
         plt.title("Hasse Diagram")
         plt.show()
+
+
 
     @staticmethod
     def format_node_label(node: Any) -> str:
