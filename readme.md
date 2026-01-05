@@ -27,27 +27,20 @@ This project generates Hasse diagrams for various relations, such as divisibilit
     ```sh
     cd hasse_diagram_generator
     ```
-
-3. Install the required dependencies by running:
-    ```sh
-    pip install -r requirements.txt
-    ```
+3. Install dependencies:
+   ```sh
+   pip install matplotlib networkx
+   ```
 
 ## Usage
 
-1. Ensure all dependencies are installed as mentioned above.
+1. Use the `Hasse` class as shown in the examples in the `main.py` in any python file.
 
 2. Run the script to generate a Hasse diagram:
 
     ```sh
-    python main.py
+    python your_file.py
     ```
-
-3. Follow the prompts to input the relation or dataset for which you want to generate the Hasse diagram.
-
-4. The generated diagram will be displayed using `matplotlib` and saved as an image file in the project directory.
-
-You can install these dependencies using `pip`.
 
 ## Output Examples
 
